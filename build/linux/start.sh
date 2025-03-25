@@ -31,6 +31,7 @@ shift "$(($OPTIND -1))"
 printf "\n"
 
 # Warning xhost + is overly permissive and will reduce system security. Edit as desired
-docker build . -t deepfacelive --build-arg NV_VER=$NV_VER
+docker build . -t deepfacelive1 --build-arg NV_VER=$NV_VER
 xhost +
-docker run --ipc host --gpus all -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $DATA_FOLDER:/data/ $CAM0 $CAM1 $CAM2 $CAM3  --rm -it deepfacelive
+docker run --privileged --ipc host --gpus all -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $DATA_FOLDER:/data/ $CAM0 $CAM1 $CAM2 $CAM3 --rm -it deepfacelive1
+
