@@ -233,6 +233,9 @@ class DeepFaceLiveApp(qtx.QXMainApplication):
         self.setWindowIcon( QXImageDB.app_icon().as_QIcon() )
 
         print("comment logo")
+        splash_wnd = self.splash_wnd =\
+            qtx.QXSplashWindow(layout=qtx.QXVBoxLayout([ (qtx.QXLabel(image=QXImageDB.splash_deepfacelive()), qtx.AlignCenter)
+                                                       ], contents_margins=20))
         #splash_wnd.show()
         #splash_wnd.center_on_screen()
 
